@@ -1,0 +1,110 @@
+---
+---
+
+<section class="py-12 sm:py-24" id="contacto">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="relative overflow-hidden rounded-[2rem] sm:rounded-[3.5rem] bg-background-dark shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+
+      <!-- Glows ambientales -->
+      <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[130px] pointer-events-none"></div>
+      <div class="absolute -bottom-24 right-1/3 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <!-- Borde brillante superior -->
+      <div class="absolute top-0 left-8 right-8 sm:left-16 sm:right-16 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none"></div>
+
+      <!-- Grid interior -->
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16 px-6 sm:px-10 py-12 sm:py-20 lg:px-24">
+
+        <!-- Texto -->
+        <div class="flex-1 space-y-7 lg:space-y-10">
+
+          <!-- Label -->
+          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-primary reveal-organic flex items-center gap-3">
+            <span class="inline-block w-8 h-px bg-primary"></span>
+            Consulta de orientación
+          </p>
+
+          <!-- Título -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white leading-[1.1] reveal-organic">
+            ¿Empezamos el camino
+            <br />
+            <span class="italic font-serif text-primary">hacia tu paz?</span>
+          </h2>
+
+          <!-- Descripción -->
+          <p class="text-sm sm:text-base leading-relaxed text-white/55 font-light max-w-md reveal-organic" style="transition-delay: 150ms;">
+            Reservá una consulta de orientación gratuita o unite a nuestros grupos de trabajo emocional. Sin compromisos.
+          </p>
+
+          <!-- Trust signals -->
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 reveal-organic" style="transition-delay: 250ms;">
+            {[
+              { icon: 'calendar_month', label: 'Primera sesión gratuita' },
+              { icon: 'lock', label: 'Confidencialidad total' },
+              { icon: 'schedule', label: 'Respuesta en 24 h' },
+            ].map(item => (
+              <div class="flex items-center gap-2 text-xs text-white/45 font-light">
+                <span class="material-symbols-outlined text-primary text-sm">{item.icon}</span>
+                {item.label}
+              </div>
+            ))}
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 reveal-organic" style="transition-delay: 350ms;">
+            <a 
+              href="#" 
+              class="group relative inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] shadow-[0_8px_32px_rgba(10,100,90,0.4)] hover:shadow-[0_12px_40px_rgba(10,100,90,0.6)] hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-sm">calendar_month</span>
+              Agendar entrevista
+            </a>
+            <a 
+              href="#" 
+              class="inline-flex items-center justify-center gap-3 text-white/70 hover:text-white text-[10px] font-bold uppercase tracking-widest transition-colors duration-300 group border border-white/10 hover:border-primary/30 rounded-full px-6 py-4 sm:border-0 sm:px-0 sm:py-0 sm:rounded-none"
+            >
+              <span class="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 group-hover:border-primary/50 transition-colors duration-300">
+                <span class="material-symbols-outlined text-sm text-primary">chat</span>
+              </span>
+              WhatsApp
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Imagen — se muestra solo desde sm en adelante -->
+        <div class="relative lg:w-[340px] xl:w-[400px] flex-shrink-0 reveal-organic hidden sm:block" style="transition-delay: 500ms;">
+
+          <!-- Marcos decorativos solo en lg+ para evitar overflow en tablet -->
+          <div class="absolute -inset-4 rounded-[2.5rem] border border-primary/15 hidden lg:block"></div>
+          <div class="absolute -inset-8 rounded-[3rem] border border-white/5 hidden lg:block"></div>
+
+          <div class="relative overflow-hidden rounded-[2rem] lg:rounded-[2.5rem]">
+            <img 
+              alt="Terapia" 
+              class="w-full h-[260px] sm:h-[320px] lg:h-[420px] object-cover opacity-70 grayscale-[30%]"
+              src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070&auto=format&fit=crop"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background-dark/30 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Badge flotante — dentro del contenedor, sin negativos que rompan -->
+          <div class="absolute bottom-4 left-4 flex items-center gap-3 bg-white/8 backdrop-blur-xl border border-white/12 rounded-2xl px-4 py-3 shadow-xl">
+            <div class="flex -space-x-2">
+              {[{background:'bg-primary', letters:'DM'}, {background:'bg-blue-800', letters:'AT'}, {background:'bg-orange-800', letters:'ML'}].map(bg => (
+                <div class={`w-7 h-7 rounded-full flex items-center justify-center ${bg.background} border-1 border-background-dark text-white text-xs`}>{bg.letters}</div>
+              ))}
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold leading-none mb-1">+120 personas</p>
+              <p class="text-white/45 text-[9px] uppercase tracking-widest">ya empezaron</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

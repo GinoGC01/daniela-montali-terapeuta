@@ -1,0 +1,359 @@
+---
+// src/pages/politica-de-privacidad.astro
+import Layout from '../layouts/Layout.astro';
+
+const currentYear = new Date().getFullYear();
+
+const sections = [
+  {
+    id: 'responsable',
+    title: 'Responsable del Tratamiento',
+    items: [
+      { label: 'Titular', value: 'Daniela Montali García' },
+      { label: 'CUIL/CUIT', value: '27-00000000-0' },
+      { label: 'Domicilio', value: 'Av. Ejemplo 000, Piso 1 · Ciudad Autónoma de Buenos Aires, Argentina' },
+      { label: 'Correo electrónico', value: 'hola@danielamontali.com' },
+      { label: 'Teléfono', value: '+54 11 0000-0000' },
+      { label: 'Matrícula profesional', value: 'Psicóloga — Matrícula Nac. 00000 / Prov. 00000' },
+      { label: 'Base de datos registrada', value: 'Registro Nacional de Bases de Datos — AAIP' },
+    ]
+  },
+  {
+    id: 'marco-legal',
+    title: 'Marco Legal Aplicable',
+    content: `La presente Política de Privacidad se rige por la Ley N° 25.326 de Protección de los Datos Personales (LPDP) y su Decreto Reglamentario N° 1558/2001, norma que reconoce el derecho a la privacidad e intimidad de las personas y regula el tratamiento de datos personales en la República Argentina.
+
+El organismo de control competente es la Agencia de Acceso a la Información Pública (AAIP), entidad autárquica con autonomía funcional en el ámbito del Poder Ejecutivo Nacional, que tiene como misión velar por el cumplimiento de la Ley 25.326 y garantizar el ejercicio de los derechos de los titulares de los datos.
+
+La titular se encuentra inscripta en el Registro Nacional de Bases de Datos ante la AAIP, conforme lo exige el art. 21 de la LPDP.`,
+  },
+  {
+    id: 'finalidades',
+    title: 'Finalidades, Base de Legitimación y Plazos de Conservación',
+    subsections: [
+      {
+        subtitle: 'Atención de consultas y solicitudes de contacto',
+        text: 'Cuando el usuario envía un formulario de contacto, escribe al correo electrónico o se comunica por WhatsApp, sus datos son tratados para responder su consulta y realizar el seguimiento correspondiente.',
+        base: 'Consentimiento libre, expreso e informado del titular (art. 5, Ley 25.326).',
+        plazo: 'Durante el tiempo necesario para resolver la consulta y hasta 1 año después del último contacto.',
+      },
+      {
+        subtitle: 'Gestión de inscripciones y participación en talleres',
+        text: 'Los datos facilitados al reservar un taller se utilizan para gestionar la inscripción, enviar la información del evento, emitir el comprobante de pago y cumplir con las obligaciones impositivas ante AFIP.',
+        base: 'Ejecución de la relación contractual y cumplimiento de obligaciones legales (art. 5 inc. 2.b, Ley 25.326).',
+        plazo: 'Durante la relación contractual y por el plazo de prescripción de las obligaciones fiscales y comerciales aplicables (mínimo 10 años, conforme al Código de Comercio).',
+      },
+      {
+        subtitle: 'Prestación de servicios de psicoterapia',
+        text: 'En el marco de la relación terapéutica, se tratan datos sensibles vinculados a la salud del consultante, necesarios para brindar el servicio de psicología clínica. Dicho tratamiento se encuentra amparado por el secreto profesional establecido en el Código de Ética del Colegio de Psicólogos y la normativa vigente.',
+        base: 'Consentimiento expreso del titular para datos sensibles (art. 7, Ley 25.326) y ejecución del contrato de servicios profesionales.',
+        plazo: 'Durante la relación terapéutica y un mínimo de 5 años tras su finalización, conforme a la normativa sanitaria y deontológica aplicable.',
+      },
+      {
+        subtitle: 'Envío de comunicaciones y contenidos de interés',
+        text: 'Con el consentimiento expreso del usuario, sus datos se utilizan para informar sobre nuevos talleres, artículos de bienestar emocional y novedades profesionales de la titular.',
+        base: 'Consentimiento libre, expreso e informado del titular (art. 5, Ley 25.326). La baja puede solicitarse en cualquier momento.',
+        plazo: 'Hasta que el usuario revoque su consentimiento mediante el enlace incluido en cada comunicación o escribiendo a hola@danielamontali.com.',
+      },
+      {
+        subtitle: 'Análisis estadístico del sitio web',
+        text: 'Se utilizan herramientas de analítica web para conocer el comportamiento de los usuarios en el sitio y mejorar la experiencia de navegación y los contenidos ofrecidos.',
+        base: 'Consentimiento del titular y/o interés legítimo de la responsable, según el tipo de herramienta utilizada.',
+        plazo: 'Conforme a la Política de Cookies del sitio web.',
+      },
+    ]
+  },
+  {
+    id: 'datos-sensibles',
+    title: 'Datos Sensibles',
+    content: `La Ley 25.326 otorga protección especial a los denominados "datos sensibles", definidos en su art. 2 como aquellos datos personales que revelan origen racial y étnico, opiniones políticas, convicciones religiosas, filosóficas o morales, afiliación sindical e información referente a la salud o a la vida sexual.
+
+En el contexto de los servicios terapéuticos, la titular puede tratar datos sensibles de salud de los consultantes. Este tratamiento se realiza únicamente con el consentimiento expreso y por escrito del titular, en el estricto marco de la relación profesional y bajo el amparo del secreto profesional.
+
+La titular no recaba ni trata datos sensibles a través de los formularios del sitio web ni en el marco de los talleres grupales, salvo que el participante los revele espontáneamente en el contexto del taller.`,
+  },
+  {
+    id: 'categorias',
+    title: 'Categorías de Datos Tratados',
+    content: `En función de la finalidad del tratamiento, se pueden tratar las siguientes categorías de datos:
+
+— Datos identificativos: nombre, apellido, DNI/Pasaporte (cuando sea necesario para facturación o comprobantes).
+— Datos de contacto: dirección de correo electrónico, número de teléfono/WhatsApp, domicilio postal.
+— Datos económicos: información necesaria para la emisión de comprobantes fiscales (facturas/recibos) y el procesamiento del pago.
+— Datos de salud (datos sensibles): únicamente en el contexto de la prestación de servicios terapéuticos individuales, con consentimiento expreso y bajo secreto profesional.
+— Datos de navegación: dirección IP, tipo de navegador, páginas visitadas, tiempo de permanencia, recabados a través de cookies y herramientas de analítica web.`,
+  },
+  {
+    id: 'destinatarios',
+    title: 'Destinatarios y Cesión de Datos',
+    content: `Los datos personales no serán cedidos a terceros salvo obligación legal o en los casos que se describen a continuación. En ningún caso se cederán datos a terceros con fines comerciales sin el consentimiento previo y expreso del titular.
+
+La titular puede compartir datos con los siguientes proveedores de servicios, con quienes se han suscripto los acuerdos de confidencialidad correspondientes:`,
+    providers: [
+      { name: 'Proveedor de alojamiento web', purpose: 'Alojamiento del sitio web y almacenamiento de formularios de contacto.', location: 'Argentina / UE' },
+      { name: 'Plataforma de email marketing', purpose: 'Gestión y envío de comunicaciones (solo con consentimiento previo del usuario).', location: 'Argentina / EE.UU.' },
+      { name: 'Plataforma de videoconferencia', purpose: 'Realización de sesiones terapéuticas y talleres en modalidad virtual.', location: 'EE.UU.' },
+      { name: 'Procesador de pagos', purpose: 'Procesamiento seguro de pagos de inscripciones y servicios profesionales.', location: 'Argentina' },
+      { name: 'Google Analytics', purpose: 'Análisis estadístico anónimo del uso del sitio web.', location: 'EE.UU.' },
+      { name: 'AFIP', purpose: 'Cesión de datos mínimos necesarios para el cumplimiento de obligaciones impositivas.', location: 'Argentina (obligación legal)' },
+    ]
+  },
+  {
+    id: 'derechos',
+    title: 'Derechos del Titular de los Datos',
+    content: `En virtud de lo dispuesto en los arts. 14 a 19 de la Ley 25.326, el titular de los datos personales tiene los siguientes derechos:`,
+    rights: [
+      { icon: 'visibility', right: 'Acceso', desc: 'Solicitar información sobre sus datos personales registrados, su origen, finalidad y destinatarios (art. 14, Ley 25.326). Puede ejercerse gratuitamente cada 6 meses.' },
+      { icon: 'edit', right: 'Rectificación', desc: 'Solicitar la corrección de datos inexactos, incompletos, desactualizados o que induzcan a error (art. 16, Ley 25.326).' },
+      { icon: 'delete', right: 'Supresión', desc: 'Solicitar la eliminación de sus datos cuando el tratamiento sea contrario a la Ley 25.326 o cuando ya no sean necesarios para la finalidad que motivó su recolección (art. 16).' },
+      { icon: 'block', right: 'Oposición', desc: 'Oponerse al tratamiento de sus datos en los supuestos previstos por la normativa, en particular cuando sean utilizados con fines publicitarios o de prospección comercial (art. 27).' },
+      { icon: 'pause', right: 'Confidencialidad', desc: 'Los datos tratados en el marco de servicios terapéuticos están amparados por el secreto profesional, con las excepciones previstas por ley.' },
+      { icon: 'download', right: 'Portabilidad', desc: 'Recibir sus datos en un formato estructurado y de uso común, en la medida que la normativa argentina vigente lo permita.' },
+      { icon: 'gpp_good', right: 'Gratuidad', desc: 'El ejercicio de los derechos de acceso, rectificación, actualización y supresión es gratuito (art. 14, Ley 25.326).' },
+    ],
+    exerciseInfo: `Para ejercer cualquiera de estos derechos, el titular debe enviar una comunicación escrita a hola@danielamontali.com indicando claramente el derecho que desea ejercer, sus datos de contacto y adjuntando copia de su DNI o documento de identidad. La titular responderá dentro del plazo de 5 días hábiles desde la recepción de la solicitud, conforme al art. 14 de la Ley 25.326.
+
+La TITULAR DE LOS DATOS, una vez vencido el plazo sin respuesta o ante una respuesta insatisfactoria, podrá interponer la acción de protección de los datos personales o hábeas data ante la justicia competente (art. 33 y ss., Ley 25.326), o presentar una denuncia ante la Agencia de Acceso a la Información Pública (AAIP) en www.argentina.gob.ar/aaip.`,
+  },
+  {
+    id: 'seguridad',
+    title: 'Medidas de Seguridad',
+    content: `Conforme a lo establecido en el art. 9 de la Ley 25.326 y las Disposiciones de la ex-Dirección Nacional de Protección de Datos Personales (hoy AAIP), la titular ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad e integridad de los datos personales y evitar su alteración, pérdida, consulta o tratamiento no autorizado.
+
+Entre las medidas implementadas se incluyen: transmisión cifrada mediante protocolo HTTPS (TLS), acceso restringido a datos personales por personal autorizado bajo deber de confidencialidad, procedimientos de detección y gestión de incidentes de seguridad, y actualización periódica de sistemas y software de seguridad.
+
+La titular notificará a los afectados y a la AAIP cualquier brecha de seguridad que pueda afectar a los datos personales, en los plazos y formas que establezca la normativa vigente.`,
+  },
+  {
+    id: 'menores',
+    title: 'Datos de Menores de Edad',
+    content: `Los servicios ofrecidos a través del sitio web están dirigidos exclusivamente a personas mayores de 18 años. La titular no recaba datos personales de menores de edad sin el consentimiento de sus padres, madres o representantes legales.
+
+En el caso de prestación de servicios terapéuticos a adolescentes (entre 13 y 17 años), se seguirán los protocolos establecidos por la Ley 26.061 de Protección Integral de los Derechos de Niñas, Niños y Adolescentes, el Código Civil y Comercial de la Nación (arts. 25 y 26) y las normas deontológicas del Colegio de Psicólogos aplicables.
+
+Si la titular tomara conocimiento de que ha recabado datos de un menor de edad sin la autorización correspondiente, procederá a eliminarlos de forma inmediata. Ante cualquier duda, puede comunicarse a hola@danielamontali.com.`,
+  },
+  {
+    id: 'cookies',
+    title: 'Uso de Cookies',
+    content: `El sitio web utiliza cookies propias y de terceros con la finalidad de facilitar la navegación, analizar el uso del sitio y personalizar el contenido. Las cookies son archivos de texto que se almacenan en el dispositivo del usuario cuando visita el sitio web.
+
+El usuario puede configurar su navegador para rechazar todas o algunas cookies, o para recibir un aviso antes de que se instalen. Sin embargo, la desactivación de determinadas cookies puede afectar al correcto funcionamiento del sitio.
+
+Para información detallada sobre las cookies utilizadas, su finalidad y cómo gestionarlas, consulte nuestra Política de Cookies disponible en el sitio web.`,
+  },
+  {
+    id: 'actualizacion',
+    title: 'Actualización de la Política',
+    content: `La titular se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a cambios legislativos, reglamentarios o de práctica profesional. Cualquier modificación será comunicada a través del sitio web con antelación razonable.
+
+Se recomienda al usuario revisar periódicamente este documento. El uso continuado del sitio web tras la publicación de modificaciones implicará la aceptación de las mismas.
+
+La presente Política de Privacidad fue actualizada por última vez en enero de ${currentYear}.`,
+  },
+];
+---
+
+<Layout title="Política de Privacidad — Daniela Montali" description="Política de privacidad y protección de datos personales del sitio web de Daniela Montali, Psicóloga Clínica. Ley 25.326 — Argentina.">
+
+  <!-- Hero -->
+  <section class="relative pt-40 pb-20 bg-background-dark overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/8 border border-white/12 px-5 py-2 mb-8">
+        <span class="material-symbols-outlined text-primary text-sm">shield</span>
+        <span class="text-[9px] uppercase tracking-[0.25em] text-white/60 font-bold">Protección de Datos Personales · Argentina</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-light tracking-tight text-white mb-6">
+        Política de <span class="italic font-serif text-primary">Privacidad</span>
+      </h1>
+      <p class="text-base text-white/45 font-light max-w-xl mx-auto leading-relaxed">
+        Información completa sobre cómo se recolectan, tratan y protegen los datos personales de los usuarios de este sitio web, conforme a la normativa argentina vigente.
+      </p>
+
+      <!-- Normativa aplicable -->
+      <div class="flex flex-wrap justify-center gap-px mt-12 overflow-hidden rounded-2xl border border-white/8 backdrop-blur-md bg-white/4 w-fit mx-auto">
+        {[
+          { value: 'Ley 25.326', label: 'Protección de Datos Personales' },
+          { value: 'Dec. 1558/01', label: 'Decreto Reglamentario' },
+          { value: 'AAIP', label: 'Organismo de Control' },
+        ].map((item, i) => (
+          <div class={`flex flex-col items-center px-8 py-4 ${i < 2 ? 'border-r border-white/8' : ''}`}>
+            <span class="text-sm font-bold text-primary tracking-wider">{item.value}</span>
+            <span class="text-[8px] uppercase tracking-[0.15em] text-white/30 font-medium mt-0.5">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+
+  <!-- Contenido -->
+  <section class="py-24 bg-background-light">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- Índice -->
+      <nav class="mb-16 p-8 rounded-3xl bg-white border border-gray-100 shadow-sm">
+        <p class="text-[10px] uppercase tracking-[0.3em] text-text-muted font-bold mb-5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">list</span>
+          Contenidos
+        </p>
+        <ol class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+          {sections.map((s, i) => (
+            <li>
+              <a
+                href={`#${s.id}`}
+                class="flex items-center gap-3 text-sm text-text-muted hover:text-primary transition-colors duration-300 group py-1"
+              >
+                <span class="text-[10px] font-bold text-primary/50 w-5 flex-shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <span class="group-hover:translate-x-1 transition-transform duration-300">{s.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <!-- Secciones -->
+      <div class="space-y-16">
+        {sections.map((s, i) => (
+          <article id={s.id} class="scroll-mt-28">
+
+            <div class="flex items-start gap-4 mb-6">
+              <span class="text-[11px] font-bold text-primary/40 font-mono mt-1.5 w-8 flex-shrink-0">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h2 class="text-2xl font-light tracking-tight text-text-main">{s.title}</h2>
+            </div>
+
+            <div class="pl-12 space-y-6">
+
+              {/* Tabla titular */}
+              {s.items && (
+                <div class="overflow-hidden rounded-2xl border border-gray-100">
+                  {s.items.map((item, idx) => (
+                    <div class={`flex flex-col sm:flex-row gap-1 px-6 py-4 ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+                      <span class="text-[10px] uppercase tracking-widest font-bold text-primary/70 sm:w-52 flex-shrink-0 mt-0.5">{item.label}</span>
+                      <span class="text-sm text-text-main font-light">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Texto principal */}
+              {s.content && s.content.split('\n\n').map(paragraph => (
+                <p class="text-sm text-text-muted font-light leading-relaxed">{paragraph.trim()}</p>
+              ))}
+
+              {/* Sub-secciones de finalidades */}
+              {s.subsections && s.subsections.map((sub, si) => (
+                <div class="rounded-2xl border border-gray-100 bg-white overflow-hidden">
+                  <div class="px-6 py-4 bg-gray-50/70 border-b border-gray-100">
+                    <h3 class="text-sm font-semibold text-text-main flex items-center gap-2">
+                      <span class="flex size-5 items-center justify-center rounded-full bg-primary/10 text-primary text-[10px] font-bold flex-shrink-0">{si + 1}</span>
+                      {sub.subtitle}
+                    </h3>
+                  </div>
+                  <div class="px-6 py-5 space-y-3">
+                    <p class="text-sm text-text-muted font-light leading-relaxed">{sub.text}</p>
+                    <div class="flex items-start gap-2 pt-1">
+                      <span class="text-[9px] font-bold uppercase tracking-wider text-primary bg-primary/8 px-2.5 py-1 rounded-full flex-shrink-0">Base legal</span>
+                      <span class="text-xs text-text-muted font-light">{sub.base}</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <span class="text-[9px] font-bold uppercase tracking-wider text-primary/70 bg-primary/5 px-2.5 py-1 rounded-full flex-shrink-0">Conservación</span>
+                      <span class="text-xs text-text-muted font-light">{sub.plazo}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Proveedores */}
+              {s.providers && (
+                <div class="overflow-x-auto">
+                  <div class="overflow-hidden rounded-2xl border border-gray-100 min-w-[560px]">
+                    <div class="grid grid-cols-3 px-5 py-3 bg-gray-50 border-b border-gray-100">
+                      <span class="text-[9px] uppercase tracking-widest font-bold text-text-muted">Proveedor</span>
+                      <span class="text-[9px] uppercase tracking-widest font-bold text-text-muted">Finalidad</span>
+                      <span class="text-[9px] uppercase tracking-widest font-bold text-text-muted">País / Ubicación</span>
+                    </div>
+                    {s.providers.map((p, pi) => (
+                      <div class={`grid grid-cols-3 gap-4 px-5 py-4 ${pi % 2 === 0 ? 'bg-white' : 'bg-gray-50/40'}`}>
+                        <span class="font-medium text-text-main text-xs">{p.name}</span>
+                        <span class="text-text-muted font-light text-xs leading-relaxed">{p.purpose}</span>
+                        <span class="text-text-muted font-light text-xs">{p.location}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Derechos */}
+              {s.rights && (
+                <div class="grid sm:grid-cols-2 gap-3">
+                  {s.rights.map(r => (
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-white border border-gray-100">
+                      <div class="flex size-9 items-center justify-center rounded-xl bg-primary/8 text-primary flex-shrink-0">
+                        <span class="material-symbols-outlined text-base">{r.icon}</span>
+                      </div>
+                      <div>
+                        <p class="text-xs font-bold text-text-main mb-1">{r.right}</p>
+                        <p class="text-xs text-text-muted font-light leading-relaxed">{r.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {s.exerciseInfo && s.exerciseInfo.split('\n\n').map(paragraph => (
+                <p class="text-sm text-text-muted font-light leading-relaxed">{paragraph.trim()}</p>
+              ))}
+
+            </div>
+
+            {i < sections.length - 1 && (
+              <div class="mt-16 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+            )}
+
+          </article>
+        ))}
+      </div>
+
+      <!-- Bloques de acción -->
+      <div class="mt-16 grid sm:grid-cols-2 gap-5">
+
+        <div class="p-7 rounded-3xl bg-primary/5 border border-primary/10 flex gap-4">
+          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">mail</span>
+          <div>
+            <p class="text-sm font-semibold text-text-main mb-1">Ejercer tus derechos</p>
+            <p class="text-sm text-text-muted font-light leading-relaxed mb-3">
+              Enviá tu solicitud indicando el derecho que deseás ejercer y adjuntando copia de tu DNI. Respondemos en 5 días hábiles.
+            </p>
+            <a href="mailto:hola@danielamontali.com" class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">
+              hola@danielamontali.com
+            </a>
+          </div>
+        </div>
+
+        <div class="p-7 rounded-3xl bg-white border border-gray-100 shadow-sm flex gap-4">
+          <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5">account_balance</span>
+          <div>
+            <p class="text-sm font-semibold text-text-main mb-1">Agencia de Acceso a la Información Pública</p>
+            <p class="text-sm text-text-muted font-light leading-relaxed mb-3">
+              Si considerás que el tratamiento de tus datos no cumple con la Ley 25.326, podés presentar una denuncia ante la AAIP.
+            </p>
+            <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">
+              argentina.gob.ar/aaip →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

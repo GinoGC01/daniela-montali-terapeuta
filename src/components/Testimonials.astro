@@ -1,0 +1,125 @@
+---
+const testimonials = [
+  {
+    quote: "El acompañamiento de Daniela me dio una perspectiva que no encontré en años de terapia anterior. Su método es directo y profundamente humano.",
+    name: "Ana G.",
+    role: "Asistente Taller IE",
+    img: "/images/st-1.webp",
+    highlight: "profundamente humano",
+  },
+  {
+    quote: "Llegué sin esperanza de cambio real. Hoy manejo mis ataques de ansiedad en minutos. Las herramientas son concretas, no teoría vacía.",
+    name: "Martina R.",
+    role: "Taller Gestión de Ansiedad",
+    img: "/images/st-2.webp",
+    highlight: "herramientas concretas",
+  },
+  {
+    quote: "Por primera vez entendí de dónde venían mis patrones relacionales. Es un trabajo que va a la raíz, no a los síntomas.",
+    name: "Lucía P.",
+    role: "Taller Vínculos Conscientes",
+    img: "/images/st-3.webp",
+    highlight: "va a la raíz",
+  },
+];
+---
+
+<section 
+  class="relative py-32 bg-background-dark overflow-hidden" 
+  id="testimonios"
+>
+
+  <!-- Glows ambientales -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[350px] h-[350px] bg-primary/6 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 z-10">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-24 reveal-organic">
+      <div class="inline-flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary mb-8">
+        <span class="material-symbols-outlined text-2xl">format_quote</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-light tracking-tight text-white mb-6">
+        Historias de <span class="italic font-serif text-primary">sanación</span>
+      </h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map((t, i) => (
+        <div 
+          class="reveal-organic group relative flex flex-col
+                 rounded-[2.5rem] overflow-hidden
+                 border border-white/8
+                 transition-all duration-500
+                 hover:-translate-y-2
+                 hover:border-primary/30"
+          style={`transition-delay: ${i * 150}ms`}
+        >
+
+          <!-- Fondo con glass y gradiente sutil -->
+          <div class="absolute inset-0 bg-white/[0.04] backdrop-blur-xl"></div>
+          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                      bg-gradient-to-br from-primary/8 via-transparent to-transparent"></div>
+
+          <!-- Borde brillante superior -->
+          <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+          <!-- Sombra hover -->
+          <div class="absolute inset-0 rounded-[2.5rem] shadow-[0_15px_60px_rgba(0,0,0,0.35)]
+                      group-hover:shadow-[0_30px_80px_rgba(7,100,90,0.18)]
+                      transition-shadow duration-500 pointer-events-none"></div>
+
+          <!-- Contenido -->
+          <div class="relative flex flex-col h-full p-10">
+
+            <!-- Número de orden decorativo -->
+            <span class="absolute top-10 right-10 text-[64px] font-light text-white/[0.04] leading-none select-none pointer-events-none font-serif">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+
+            <!-- Stars -->
+            <div class="flex gap-0.5 text-primary mb-7">
+              {[...Array(5)].map(() => (
+                <span class="material-symbols-outlined text-[15px]">star</span>
+              ))}
+            </div>
+
+            <!-- Comilla decorativa -->
+            <span class="block text-primary/20 text-[72px] leading-none font-serif -mb-4 -mt-1 select-none">&ldquo;</span>
+
+            <!-- Quote -->
+            <blockquote class="text-base text-white/75 font-light leading-relaxed flex-grow mb-8">
+              {t.quote}
+            </blockquote>
+
+            <!-- Palabra destacada -->
+            <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-primary/60 mb-8">
+              &ldquo;{t.highlight}&rdquo;
+            </p>
+
+            <!-- Divider -->
+            <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-7"></div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <div class="size-10 rounded-full overflow-hidden ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-300 flex-shrink-0 bg-primary/20">
+                <img src={t.img} class="w-full h-full object-cover" alt={t.name} />
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">{t.name}</p>
+                <p class="text-[9px] uppercase tracking-widest text-white/40 font-semibold mt-0.5">{t.role}</p>
+              </div>
+              <!-- Icono verificado -->
+              <span class="ml-auto material-symbols-outlined text-primary/50 text-base group-hover:text-primary transition-colors duration-300">verified</span>
+            </div>
+
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

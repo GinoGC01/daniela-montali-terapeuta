@@ -1,0 +1,326 @@
+---
+const workshops = [
+  {
+    date: '15 Abr',
+    time: '14:00 - 17:00',
+    title: 'Gestión de Ansiedad y Estrés',
+    desc: 'Herramientas cognitivo-conductuales para recuperar la calma en entornos de alta presión.',
+    price: '$95',
+    type: 'Presencial & Virtual',
+    spots: '12 plazas disponibles',
+    level: 'Todos los niveles',
+    instructor: 'Dra. Valentina Ríos',
+    full: `Este taller intensivo de 3 horas está diseñado para personas que experimentan ansiedad crónica, estrés laboral o dificultad para desconectarse. A través de un enfoque basado en la Terapia Cognitivo-Conductual (TCC) y técnicas de regulación del sistema nervioso autónomo, aprenderás a identificar los desencadenantes de tu ansiedad y a interrumpir el ciclo de pensamiento catastrófico antes de que escale.`,
+    program: [
+      { time: '14:00', label: 'Bienvenida y evaluación inicial de niveles de estrés' },
+      { time: '14:30', label: 'Mapa cognitivo: identificar pensamientos automáticos' },
+      { time: '15:15', label: 'Técnicas de regulación: respiración diafragmática y grounding' },
+      { time: '16:00', label: 'Reestructuración conductual y plan de acción personal' },
+      { time: '16:45', label: 'Cierre, preguntas y kit de recursos digitales' },
+    ],
+    includes: [
+      'Material de trabajo impreso y digital',
+      'Grabación de las meditaciones guiadas',
+      'Acceso al grupo privado de seguimiento (30 días)',
+      'Consulta grupal de seguimiento a las 2 semanas',
+    ],
+    tags: ['TCC', 'Regulación emocional', 'Neurociencia aplicada'],
+  },
+  {
+    date: '22 Abr',
+    time: '10:00 - 13:00',
+    title: 'El Arte de la Autocompasión',
+    desc: 'Aprende a romper el ciclo del diálogo interno negativo y construye una relación sana contigo.',
+    price: '$80',
+    type: 'Virtual',
+    spots: '20 plazas disponibles',
+    level: 'Principiantes y nivel medio',
+    instructor: 'Lic. Camila Herrera',
+    full: `Basado en el protocolo MSC (Mindful Self-Compassion) de Kristin Neff y Christopher Germer, este taller explora cómo el autocriticismo excesivo activa los mismos circuitos cerebrales que el acoso social. Aprenderás a reconocer el sufrimiento propio sin amplificarlo, a tratarte con la misma amabilidad que ofrecerías a alguien que quieres, y a construir una base emocional más estable y resiliente frente a los errores y fracasos.`,
+    program: [
+      { time: '10:00', label: 'Introducción: ¿Qué es la autocompasión y qué NO es?' },
+      { time: '10:40', label: 'Ejercicio: El crítico interior — cartografiar su voz' },
+      { time: '11:20', label: 'Práctica de Loving-Kindness Meditation (LKM)' },
+      { time: '12:00', label: 'Diálogo compasivo: reescribir la narrativa personal' },
+      { time: '12:40', label: 'Integración y compromisos de práctica diaria' },
+    ],
+    includes: [
+      'Workbook de autocompasión (PDF descargable)',
+      'Audio de meditaciones guiadas (5 prácticas)',
+      'Acceso a la comunidad privada online',
+      'Hoja de práctica diaria de 7 días',
+    ],
+    tags: ['Autocompasión', 'Mindfulness', 'Psicología positiva'],
+  },
+  {
+    date: '6 May',
+    time: '18:00 - 21:00',
+    title: 'Vínculos Conscientes',
+    desc: 'Transforma tus patrones relacionales desde el apego y la comunicación no violenta.',
+    price: '$110',
+    type: 'Presencial',
+    spots: '10 plazas disponibles',
+    level: 'Nivel medio y avanzado',
+    instructor: 'Dra. Valentina Ríos',
+    full: `Nuestros patrones de relación se forman en la infancia y se repiten de manera inconsciente en cada vínculo adulto: pareja, familia, amistad, trabajo. Este taller combina la Teoría del Apego de Bowlby con herramientas de Comunicación No Violenta (CNV) para ayudarte a identificar tu estilo de apego dominante, comprender cómo ese patrón genera conflictos recurrentes, y desarrollar estrategias concretas para relacionarte desde un lugar más seguro y auténtico.`,
+    program: [
+      { time: '18:00', label: 'Test de estilos de apego y reflexión guiada' },
+      { time: '18:45', label: 'Dinámicas inconscientes: perseguidor, distante, ansioso' },
+      { time: '19:30', label: 'Introducción práctica a la CNV: necesidades vs. estrategias' },
+      { time: '20:15', label: 'Role-play: conversaciones difíciles desde el apego seguro' },
+      { time: '20:50', label: 'Cierre y hoja de ruta personal para los próximos 30 días' },
+    ],
+    includes: [
+      'Evaluación de estilo de apego personalizada',
+      'Guía de CNV para el día a día (impresa)',
+      'Sesión de seguimiento grupal online (15 días después)',
+      'Acceso al canal privado de la comunidad',
+    ],
+    tags: ['Teoría del apego', 'CNV', 'Relaciones sanas'],
+  },
+  {
+    date: '20 May',
+    time: '09:00 - 12:00',
+    title: 'Sueño, Descanso y Mente Tranquila',
+    desc: 'Un enfoque científico para recuperar la calidad del sueño y restaurar tu energía vital.',
+    price: '$85',
+    type: 'Virtual',
+    spots: '25 plazas disponibles',
+    level: 'Todos los niveles',
+    instructor: 'Lic. Camila Herrera',
+    full: `El insomnio y el sueño no reparador afectan al 30% de los adultos y son uno de los principales amplificadores de ansiedad, irritabilidad y deterioro cognitivo. Este taller aplica el protocolo de Terapia Cognitivo-Conductual para el Insomnio (TCC-I), considerado el tratamiento de primera línea por encima de la medicación según la Academia Americana de Medicina del Sueño. Aprenderás la higiene del sueño basada en evidencia, técnicas de desactivación mental nocturna y cómo reprogramar la relación entre tu mente y la cama.`,
+    program: [
+      { time: '09:00', label: 'Evaluación: diario del sueño y arquitectura del ciclo' },
+      { time: '09:45', label: 'Neurofisiología del sueño: qué pasa mientras dormimos' },
+      { time: '10:30', label: 'TCC-I: restricción de sueño y control de estímulos' },
+      { time: '11:15', label: 'Rutina nocturna: técnicas de desactivación mental y corporal' },
+      { time: '11:45', label: 'Plan personalizado y recursos de seguimiento' },
+    ],
+    includes: [
+      'Plantilla de diario del sueño (4 semanas)',
+      'Protocolo TCC-I resumido en PDF',
+      'Audio de body scan nocturno guiado',
+      'Check-in grupal online a las 3 semanas',
+    ],
+    tags: ['TCC-I', 'Neurociencia del sueño', 'Bienestar integral'],
+  },
+];
+---
+
+<section class="py-32 bg-background-light" id="talleres">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16 reveal-organic">
+      <div class="max-w-2xl">
+        <h4 class="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4">Próximos Encuentros</h4>
+        <h2 class="text-4xl md:text-5xl font-light tracking-tight text-text-main">
+          Talleres de <span class="italic font-serif">crecimiento</span>
+        </h2>
+      </div>
+      <a href="#" class="text-[10px] font-bold uppercase tracking-widest text-text-main border-b-2 border-primary pb-1 hover:text-primary transition-all">
+        Ver calendario completo
+      </a>
+    </div>
+
+    <div class="space-y-5">
+      {workshops.map((w, i) => (
+        <div 
+          class="workshop-card reveal-organic rounded-[2.5rem] overflow-hidden border border-gray-100 bg-white shadow-sm transition-shadow duration-500"
+          style={`transition-delay: ${i * 100}ms`}
+          data-open="false"
+        >
+
+          <!-- HEADER — siempre visible, click para expandir -->
+          <div 
+            class="workshop-header group flex flex-col lg:flex-row cursor-pointer select-none"
+          >
+            <!-- Fecha -->
+            <div class="lg:w-1/4 bg-accent-sage/30 flex flex-col items-center justify-center p-8 text-center
+                        transition-colors duration-500 workshop-date-block">
+              <span class="text-4xl font-light text-text-main transition-colors workshop-date-text">{w.date}</span>
+              <span class="text-[10px] uppercase tracking-widest font-bold text-text-muted transition-colors mt-2 workshop-spots-text">{w.spots}</span>
+            </div>
+
+            <!-- Info principal -->
+            <div class="flex-1 p-10 flex flex-col md:flex-row justify-between items-center gap-8">
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-4 text-[10px] font-bold uppercase tracking-widest text-primary">
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">schedule</span> {w.time || 'TBA'}
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">location_on</span> {w.type}
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">person</span> {w.instructor}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-bold text-text-main">{w.title}</h3>
+                <p class="text-text-muted font-light max-w-xl">{w.desc}</p>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {w.tags.map(tag => (
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/8 px-3 py-1 rounded-full border border-primary/15">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-4 flex-shrink-0">
+                <span class="text-2xl font-light text-text-main">{w.price}</span>
+                <button 
+                  class="workshop-reserve bg-text-main text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-all"
+                  onclick="event.stopPropagation()"
+                >
+                  Reservar Plaza
+                </button>
+                <!-- Toggle indicator -->
+                <span class="workshop-toggle flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-primary/60 transition-all duration-300">
+                  <span class="material-symbols-outlined text-base workshop-toggle-icon transition-transform duration-300">expand_more</span>
+                  Ver detalles
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXPANDED CONTENT — oculto por defecto -->
+          <div class="workshop-expanded" style="display:none; opacity:0;">
+            <div class="border-t border-gray-100 mx-8 mb-0"></div>
+            <div class="grid md:grid-cols-2 gap-0">
+
+              <!-- Columna izquierda: descripción + programa -->
+              <div class="p-10 border-r border-gray-100/80 space-y-8">
+
+                <div>
+                  <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Sobre el taller</h4>
+                  <p class="text-text-muted font-light leading-relaxed text-sm">{w.full}</p>
+                </div>
+
+                <div>
+                  <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Programa</h4>
+                  <ul class="space-y-3">
+                    {w.program.map((p, pi) => (
+                      <li class="flex items-start gap-4">
+                        <span class="text-[11px] font-bold text-primary bg-primary/8 px-2 py-1 rounded-lg flex-shrink-0 mt-0.5 font-mono">
+                          {p.time}
+                        </span>
+                        <span class="text-sm text-text-main font-light leading-snug">{p.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- Columna derecha: incluye + info práctica -->
+              <div class="p-10 space-y-8">
+
+                <div>
+                  <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Qué incluye</h4>
+                  <ul class="space-y-3">
+                    {w.includes.map(item => (
+                      <li class="flex items-start gap-3 text-sm text-text-main font-light">
+                        <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="space-y-3 bg-background-light/70 rounded-2xl p-6">
+                  <div class="flex items-center gap-3 text-sm">
+                    <span class="material-symbols-outlined text-primary text-base">school</span>
+                    <span class="text-text-muted font-light">Nivel: <strong class="text-text-main font-semibold">{w.level}</strong></span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm">
+                    <span class="material-symbols-outlined text-primary text-base">group</span>
+                    <span class="text-text-muted font-light">Capacidad: <strong class="text-text-main font-semibold">{w.spots}</strong></span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm">
+                    <span class="material-symbols-outlined text-primary text-base">person_pin</span>
+                    <span class="text-text-muted font-light">Instructor/a: <strong class="text-text-main font-semibold">{w.instructor}</strong></span>
+                  </div>
+                  <div class="flex items-center gap-3 text-sm">
+                    <span class="material-symbols-outlined text-primary text-base">videocam</span>
+                    <span class="text-text-muted font-light">Modalidad: <strong class="text-text-main font-semibold">{w.type}</strong></span>
+                  </div>
+                </div>
+
+                <button 
+                  class="w-full bg-primary text-white py-4 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-all"
+                  onclick="event.stopPropagation()"
+                >
+                  Reservar mi plaza — {w.price}
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.workshop-card').forEach(card => {
+    const header   = card.querySelector<HTMLElement>('.workshop-header')!;
+    const expanded = card.querySelector<HTMLElement>('.workshop-expanded')!;
+    const toggleIcon = card.querySelector<HTMLElement>('.workshop-toggle-icon')!;
+    const toggleLabel = card.querySelector<HTMLElement>('.workshop-toggle')!;
+    const dateBlock = card.querySelector<HTMLElement>('.workshop-date-block')!;
+    const dateText  = card.querySelector<HTMLElement>('.workshop-date-text')!;
+    const spotsText = card.querySelector<HTMLElement>('.workshop-spots-text')!;
+
+    header.addEventListener('click', () => {
+      const isOpen = card.dataset.open === 'true';
+
+      if (isOpen) {
+        // — COLAPSAR: instantáneo —
+        expanded.style.transition = 'none';
+        expanded.style.opacity    = '0';
+        expanded.style.display    = 'none';
+        card.dataset.open = 'false';
+        card.style.boxShadow = '';
+
+        toggleIcon.style.transform = '';
+        toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base workshop-toggle-icon" style="display:inline-block">expand_more</span> Ver detalles';
+
+        dateBlock.style.background = '';
+        dateText.style.color = '';
+        spotsText.style.color = '';
+
+      } else {
+        // — EXPANDIR: con animación suave —
+        expanded.style.display    = 'block';
+        expanded.style.transition = 'none';
+        expanded.style.opacity    = '0';
+        expanded.style.transform  = 'translateY(-8px)';
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          expanded.style.transition = 'opacity 450ms ease, transform 450ms ease';
+          expanded.style.opacity    = '1';
+          expanded.style.transform  = 'translateY(0)';
+        }));
+
+        card.dataset.open = 'true';
+        card.style.boxShadow = '0 20px 60px rgba(7,28,31,0.12)';
+
+        toggleIcon.style.transform = 'rotate(180deg)';
+        toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base" style="display:inline-block;transform:rotate(180deg)">expand_more</span> Cerrar';
+
+        dateBlock.style.background = 'var(--color-primary, #0a6460)';
+        dateText.style.color       = 'white';
+        spotsText.style.color      = 'rgba(255,255,255,0.75)';
+
+        // Scroll suave para ver el contenido
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    });
+  });
+</script>

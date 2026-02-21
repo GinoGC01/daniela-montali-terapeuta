@@ -1,0 +1,306 @@
+---
+const services = [
+  { 
+    icon: 'self_improvement', 
+    title: 'Inteligencia Emocional', 
+    summary: 'Aprende a identificar y regular tus emociones para vivir con mayor plenitud.',
+    full: `Profundizamos en el reconocimiento de patrones emocionales, fortaleciendo la autorregulación y la resiliencia. Integramos herramientas basadas en neurociencia y psicología clínica para transformar tu manera de relacionarte contigo mismo y con los demás.`,
+    details: [
+      { icon: 'psychology', label: 'Mapeo emocional personalizado' },
+      { icon: 'favorite', label: 'Regulación del sistema nervioso' },
+      { icon: 'groups', label: 'Vínculos más auténticos' },
+    ],
+    sessions: '8–12 sesiones',
+    format: 'Individual o grupal',
+  },
+  { 
+    icon: 'spa', 
+    title: 'Gestión de Ansiedad', 
+    summary: 'Recupera la calma y el equilibrio mental con técnicas validadas.',
+    full: `Aplicamos técnicas estructuradas para modificar pensamientos automáticos y regular el sistema nervioso. Incluye estrategias cognitivas, respiración terapéutica y reestructuración conductual para una estabilidad sostenida.`,
+    details: [
+      { icon: 'air', label: 'Respiración terapéutica guiada' },
+      { icon: 'cognition', label: 'Reestructuración cognitiva' },
+      { icon: 'trending_down', label: 'Reducción de respuesta al estrés' },
+    ],
+    sessions: '6–10 sesiones',
+    format: 'Individual',
+  },
+  { 
+    icon: 'light_mode', 
+    title: 'Mindfulness Activo', 
+    summary: 'Integra atención plena en tu rutina diaria de forma sostenible.',
+    full: `Desarrollamos una práctica adaptada a tu ritmo de vida. Entrenamos foco, presencia y conciencia corporal para reducir rumiación mental y mejorar claridad emocional a largo plazo.`,
+    details: [
+      { icon: 'timer', label: 'Práctica de 10 min diarios' },
+      { icon: 'record_voice_over', label: 'Meditaciones guiadas' },
+      { icon: 'insights', label: 'Diario de conciencia emocional' },
+    ],
+    sessions: '4–8 sesiones',
+    format: 'Individual o grupal',
+  },
+];
+---
+
+<section class="relative py-36 bg-gradient-to-b from-background-light via-white to-background-light overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-24">
+      <h2 class="text-4xl md:text-5xl font-light tracking-tight text-text-main mb-6">
+        Enfoque Terapéutico <span class="italic font-serif text-primary">Integral</span>
+      </h2>
+      <p class="text-lg text-text-muted font-light leading-relaxed">
+        Ciencia y empatía unidas para ofrecerte resultados tangibles.
+      </p>
+    </div>
+
+    <!-- DESKTOP: Accordion horizontal auto-rotante -->
+    <div id="services-track" class="hidden md:flex gap-5 items-stretch" style="height: 480px;">
+      {services.map((s, i) => (
+        <div 
+          data-card={i}
+          class="service-card relative
+                 bg-white/80 backdrop-blur-xl
+                 border border-primary/10
+                 rounded-[2.5rem]
+                 overflow-hidden
+                 shadow-[0_8px_32px_rgba(7,28,31,0.07)]
+                 cursor-pointer"
+          style="flex: 1; transition: flex 700ms cubic-bezier(.16,1,.3,1), box-shadow 700ms ease, border-color 700ms ease;"
+        >
+          <!-- Glow fondo -->
+          <div class="card-glow absolute inset-0 opacity-0 transition-opacity duration-700
+                      bg-gradient-to-br from-primary/[0.04] via-transparent to-primary/[0.02]" />
+
+          <!-- Contenido interno -->
+          <div class="relative flex flex-col h-full p-10">
+
+            <!-- Icono -->
+            <div class="card-icon w-14 h-14 rounded-2xl flex-shrink-0
+                        flex items-center justify-center
+                        bg-primary/10 text-primary
+                        transition-all duration-500 mb-7">
+              <span class="material-symbols-outlined text-[28px]">{s.icon}</span>
+            </div>
+
+            <!-- Título -->
+            <h3 class="text-lg font-semibold tracking-tight text-text-main mb-3">
+              {s.title}
+            </h3>
+
+            <!-- Resumen -->
+            <p class="card-summary text-sm text-text-muted font-light leading-relaxed transition-opacity duration-300">
+              {s.summary}
+            </p>
+
+            <!-- Contenido expandido -->
+            <div class="card-expanded absolute inset-0 p-10 flex flex-col justify-end
+                        opacity-0 pointer-events-none
+                        transition-opacity duration-500">
+
+              <p class="card-detail-text text-sm text-text-main font-light leading-relaxed mb-6
+                        translate-y-3 transition-transform duration-500">
+                {s.full}
+              </p>
+
+              <ul class="card-detail-list space-y-2 mb-6
+                         translate-y-3 transition-transform duration-500" style="transition-delay: 80ms;">
+                {s.details.map((d) => (
+                  <li class="flex items-center gap-3 text-sm text-text-main">
+                    <span class="material-symbols-outlined text-primary text-base">{d.icon}</span>
+                    <span class="font-light">{d.label}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="card-detail-footer flex items-center gap-6 pt-4 border-t border-primary/10
+                          translate-y-3 transition-transform duration-500" style="transition-delay: 140ms;">
+                <span class="text-xs text-text-muted">
+                  <span class="block text-primary font-semibold text-sm">{s.sessions}</span>
+                  duración estimada
+                </span>
+                <span class="text-xs text-text-muted">
+                  <span class="block text-primary font-semibold text-sm">{s.format}</span>
+                  modalidad
+                </span>
+                <div class="card-line ml-auto h-[2px] bg-primary" style="width:0; transition: width 700ms ease; transition-delay: 300ms;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="card-progress absolute bottom-0 left-0 h-[3px] bg-primary/50 rounded-full" style="width:0;"></div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Dots indicadores -->
+    <div class="hidden md:flex justify-center gap-2 mt-8">
+      {services.map((_, i) => (
+        <button 
+          data-dot={i}
+          class="service-dot w-2 h-2 rounded-full bg-primary/20 transition-all duration-300"
+          aria-label={`Ver servicio ${i + 1}`}
+        />
+      ))}
+    </div>
+
+    <!-- MOBILE -->
+    <div class="md:hidden grid gap-6">
+      {services.map((s) => (
+        <div class="p-8 rounded-3xl bg-white border border-primary/10 shadow-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">{s.icon}</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-main">{s.title}</h3>
+          </div>
+          <p class="text-sm text-text-muted font-light leading-relaxed mb-4">{s.full}</p>
+          <ul class="space-y-2 mb-4">
+            {s.details.map((d) => (
+              <li class="flex items-center gap-2 text-sm text-text-main">
+                <span class="material-symbols-outlined text-primary text-sm">{d.icon}</span>
+                <span class="font-light">{d.label}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="flex gap-4 pt-3 border-t border-primary/10">
+            <span class="text-xs text-text-muted">{s.sessions}</span>
+            <span class="text-xs text-text-muted">·</span>
+            <span class="text-xs text-text-muted">{s.format}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const INTERVAL = 4000; // ms que cada card permanece activa
+
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.service-card'));
+  const dots  = Array.from(document.querySelectorAll<HTMLElement>('.service-dot'));
+  let current = 0;
+  let timer: ReturnType<typeof setInterval> | null = null;
+
+  function activateCard(index: number) {
+    cards.forEach((card, i) => {
+      const isActive = i === index;
+
+      card.style.flex        = isActive ? '2.6' : '1';
+      card.style.boxShadow   = isActive ? '0 24px 72px rgba(7,28,31,0.14)' : '0 8px 32px rgba(7,28,31,0.07)';
+      card.style.borderColor = isActive ? 'rgba(10,100,96,0.25)' : 'rgba(10,100,96,0.10)';
+
+      const glow       = card.querySelector<HTMLElement>('.card-glow')!;
+      const icon       = card.querySelector<HTMLElement>('.card-icon')!;
+      const summary    = card.querySelector<HTMLElement>('.card-summary')!;
+      const expanded   = card.querySelector<HTMLElement>('.card-expanded')!;
+      const detailText = card.querySelector<HTMLElement>('.card-detail-text')!;
+      const detailList = card.querySelector<HTMLElement>('.card-detail-list')!;
+      const detailFoot = card.querySelector<HTMLElement>('.card-detail-footer')!;
+      const line       = card.querySelector<HTMLElement>('.card-line')!;
+      const progress   = card.querySelector<HTMLElement>('.card-progress')!;
+
+      if (isActive) {
+        // — ENTRADA: con animación suave —
+        glow.style.transition  = 'opacity 700ms ease';
+        glow.style.opacity     = '1';
+        icon.style.background  = 'var(--color-primary, #0a6460)';
+        icon.style.color       = 'white';
+        icon.style.transform   = 'scale(1.1)';
+        summary.style.transition = 'opacity 300ms ease';
+        summary.style.opacity  = '0';
+
+        // El contenido aparece después de que la card se abre
+        setTimeout(() => {
+          expanded.style.transition    = 'opacity 500ms ease';
+          expanded.style.opacity       = '1';
+          expanded.style.pointerEvents = 'auto';
+          detailText.style.transition  = 'transform 500ms ease';
+          detailText.style.transform   = 'translateY(0)';
+          detailList.style.transition  = 'transform 500ms ease 80ms';
+          detailList.style.transform   = 'translateY(0)';
+          detailFoot.style.transition  = 'transform 500ms ease 140ms';
+          detailFoot.style.transform   = 'translateY(0)';
+        }, 320);
+
+        setTimeout(() => { line.style.transition = 'width 700ms ease 300ms'; line.style.width = '2.5rem'; }, 620);
+
+        // Progress bar
+        progress.style.transition = 'none';
+        progress.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          progress.style.transition = `width ${INTERVAL}ms linear`;
+          progress.style.width = '100%';
+        }));
+
+      } else {
+        // — SALIDA: instantánea, tiempo = 0 —
+        glow.style.transition  = 'none';
+        glow.style.opacity     = '0';
+        icon.style.background  = '';
+        icon.style.color       = '';
+        icon.style.transform   = '';
+        summary.style.transition = 'none';
+        summary.style.opacity  = '1';
+
+        expanded.style.transition    = 'none';
+        expanded.style.opacity       = '0';
+        expanded.style.pointerEvents = 'none';
+        detailText.style.transition  = 'none';
+        detailText.style.transform   = 'translateY(12px)';
+        detailList.style.transition  = 'none';
+        detailList.style.transform   = 'translateY(12px)';
+        detailFoot.style.transition  = 'none';
+        detailFoot.style.transform   = 'translateY(12px)';
+        line.style.transition        = 'none';
+        line.style.width             = '0';
+
+        progress.style.transition = 'none';
+        progress.style.width      = '0%';
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.style.background = i === index ? 'var(--color-primary, #0a6460)' : '';
+      dot.style.transform  = i === index ? 'scale(1.4)' : '';
+    });
+
+    current = index;
+  }
+
+  function startAuto() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => {
+      activateCard((current + 1) % cards.length);
+    }, INTERVAL);
+  }
+
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  // Init
+  activateCard(0);
+  startAuto();
+
+  // Click en card → ir a esa + reiniciar ciclo
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => { activateCard(i); stopAuto(); startAuto(); });
+    card.addEventListener('mouseenter', stopAuto);
+    card.addEventListener('mouseleave', startAuto);
+  });
+
+  // Click en dots
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { activateCard(i); stopAuto(); startAuto(); });
+  });
+
+  // Pause cuando el tab está oculto
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stopAuto() : startAuto();
+  });
+</script>

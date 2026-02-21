@@ -1,0 +1,125 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { label: 'Talleres', href: '#talleres' },
+  { label: 'Sobre Mí', href: '#sobre-mi' },
+  { label: 'Testimonios', href: '#testimonios' },
+  { label: 'Contacto', href: '#contacto' },
+];
+
+const social = [
+  { label: 'Instagram', href: '#', icon: 'photo_camera' },
+  { label: 'LinkedIn', href: '#', icon: 'work' },
+  { label: 'WhatsApp', href: '#', icon: 'chat' },
+];
+---
+
+<footer class="relative bg-background-dark overflow-hidden">
+
+  <!-- Glow ambiental -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-primary/8 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <!-- Línea superior con gradiente -->
+  <div class="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Bloque superior -->
+    <div class="grid md:grid-cols-3 gap-12 py-16 border-b border-white/6">
+
+      <!-- Brand -->
+      <div class="flex flex-col gap-5">
+        <a href="/" class="flex items-center gap-3 group w-fit">
+          <div class="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary
+                      group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <span class="material-symbols-outlined text-xl">spa</span>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-[15px] font-bold tracking-tight text-white group-hover:text-primary transition-colors duration-300">
+              Daniela Montali
+            </span>
+            <span class="text-[9px] uppercase tracking-[0.2em] text-white/35 font-medium mt-0.5">
+              Psicóloga Clínica
+            </span>
+          </div>
+        </a>
+        <p class="text-sm text-white/40 font-light leading-relaxed max-w-xs">
+          Acompañamiento terapéutico moderno para transformar el estrés en claridad y la ansiedad en propósito.
+        </p>
+
+        <!-- Badge certificación -->
+        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 w-fit">
+          <span class="flex size-4 items-center justify-center rounded-full bg-primary">
+            <span class="material-symbols-outlined text-white" style="font-size:10px">check</span>
+          </span>
+          <span class="text-[9px] uppercase tracking-[0.2em] text-white/50 font-semibold">Espacio Seguro Certificado</span>
+        </div>
+      </div>
+
+      <!-- Nav links -->
+      <div class="flex flex-col gap-4 md:items-center">
+        <p class="text-[9px] uppercase tracking-[0.3em] text-white/25 font-bold mb-2">Navegación</p>
+        {links.map(link => (
+          <a
+            href={link.href}
+            class="text-sm text-white/50 hover:text-primary transition-colors duration-300 font-light w-fit
+                   relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary
+                   after:transition-all after:duration-300 hover:after:w-full"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA contacto -->
+      <div class="flex flex-col gap-5 md:items-end">
+        <p class="text-[9px] uppercase tracking-[0.3em] text-white/25 font-bold mb-2">Contacto directo</p>
+
+        <a href="mailto:hola@danielamontali.com"
+           class="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-300 group">
+          <span class="material-symbols-outlined text-primary text-base">mail</span>
+          hola@danielamontali.com
+        </a>
+        <a href="tel:+34600000000"
+           class="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-primary text-base">phone</span>
+          +34 600 000 000
+        </a>
+
+        <!-- Social -->
+        <div class="flex gap-2 mt-2">
+          {social.map(s => (
+            <a
+              href={s.href}
+              aria-label={s.label}
+              class="flex size-9 items-center justify-center rounded-full
+                     bg-white/5 border border-white/10 text-white/40
+                     hover:bg-primary hover:border-primary hover:text-white
+                     transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-base">{s.icon}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bloque inferior -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 py-6">
+      <p class="text-[9px] uppercase tracking-[0.25em] text-white/20 font-medium">
+        © {currentYear} Daniela Montali · Todos los derechos reservados
+      </p>
+      <div class="flex gap-6">
+        <a href="/privacidad" class="text-[9px] uppercase tracking-widest text-white/20 hover:text-white/50 transition-colors duration-300">
+          Privacidad
+        </a>
+        <a href="/aviso-legal" class="text-[9px] uppercase tracking-widest text-white/20 hover:text-white/50 transition-colors duration-300">
+          Aviso legal
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>

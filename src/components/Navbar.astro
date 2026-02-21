@@ -1,0 +1,397 @@
+---
+const navItems = [
+  { name: 'Talleres', href: '#talleres' },
+  { name: 'Sobre Mí', href: '#sobre-mi' },
+  { name: 'Testimonios', href: '#testimonios' },
+  { name: 'Contacto', href: '#contacto' },
+];
+---
+
+<nav id="main-nav" class="fixed top-0 z-[100] w-full transition-all duration-500">
+
+  <!-- Barra principal -->
+  <div id="nav-inner" class="mx-auto max-w-7xl px-6 lg:px-8 transition-all duration-500">
+    <div class="flex items-center justify-between" style="height: 80px; transition: height 500ms ease;">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group cursor-pointer no-underline">
+        <div class="nav-logo-icon flex size-10 items-center justify-center rounded-full
+                    bg-white/15 text-white
+                    group-hover:bg-primary group-hover:text-white transition-all duration-300">
+          <span class="material-symbols-outlined text-xl">spa</span>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="nav-logo-name text-[15px] font-bold tracking-tight text-white group-hover:text-primary transition-colors duration-300">
+            Daniela Montali
+          </span>
+          <span class="nav-logo-sub text-[9px] uppercase tracking-[0.2em] text-white/50 font-medium mt-0.5">
+            Psicóloga Clínica
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-1">
+        {navItems.map(item => (
+          <a
+            class="nav-link relative px-4 py-2 text-[11px] uppercase tracking-[0.2em] font-semibold
+                   text-white/70 hover:text-white
+                   transition-colors duration-300 rounded-full hover:bg-white/10 group"
+            href={item.href}
+          >
+            {item.name}
+            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 h-px w-0 bg-primary
+                         group-hover:w-4 transition-all duration-300 rounded-full"></span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Desktop CTA + mobile toggle -->
+      <div class="flex items-center gap-4">
+        <a
+          href="#contacto"
+          class="nav-cta hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-full
+                 text-[10px] font-bold uppercase tracking-widest
+                 bg-white/15 backdrop-blur-md text-white border border-white/25
+                 hover:bg-primary hover:border-primary
+                 hover:shadow-[0_6px_28px_rgba(10,100,90,0.5)]
+                 hover:-translate-y-0.5 active:translate-y-0
+                 transition-all duration-300"
+        >
+          <span class="material-symbols-outlined text-sm">calendar_month</span>
+          Agendar sesión
+        </a>
+
+        <!-- Hamburger -->
+        <button
+          id="menu-toggle"
+          class="md:hidden relative flex size-11 items-center justify-center rounded-full
+                 bg-white/15 backdrop-blur-md border border-white/20
+                 hover:border-primary/50 hover:bg-primary/20
+                 transition-all duration-300"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <!-- Barras animadas -->
+          <span class="hamburger-bar absolute w-5 h-px bg-white rounded-full transition-all duration-300" style="transform: translateY(-6px);"></span>
+          <span class="hamburger-bar absolute w-5 h-px bg-white rounded-full transition-all duration-300" style="transform: translateY(0);"></span>
+          <span class="hamburger-bar absolute w-3 h-px bg-white rounded-full transition-all duration-300" style="transform: translateY(6px) translateX(4px);"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Línea decorativa inferior -->
+  <div id="nav-border" class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200/70 to-transparent transition-opacity duration-500"></div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[90] flex flex-col md:hidden
+         pointer-events-none"
+  aria-hidden="true"
+>
+  <!-- Fondo blur -->
+  <div id="mobile-bg" class="absolute inset-0 bg-white/95 backdrop-blur-xl opacity-0 transition-opacity duration-400"></div>
+
+  <!-- Contenido -->
+  <div class="relative flex flex-col h-full px-8 pt-28 pb-12">
+
+    <!-- Links -->
+    <nav class="flex-1 flex flex-col justify-center gap-2">
+      {navItems.map((item, i) => (
+        <a
+          href={item.href}
+          class="mobile-nav-link group flex items-center justify-between
+                 py-5 border-b border-gray-100
+                 opacity-0 translate-y-6
+                 transition-all duration-500"
+          style={`transition-delay: ${i * 60}ms`}
+        >
+          <span class="text-3xl font-light tracking-tight text-text-main group-hover:text-primary transition-colors duration-300">
+            {item.name}
+          </span>
+          <span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            arrow_forward
+          </span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Footer del menú -->
+    <div class="opacity-0 translate-y-4 mobile-nav-footer transition-all duration-500" style="transition-delay: 280ms;">
+      <a
+        href="#contacto"
+        class="mobile-nav-link flex items-center justify-center gap-2 w-full bg-primary text-white
+               py-4 rounded-2xl text-[11px] font-bold uppercase tracking-widest
+               shadow-[0_8px_32px_rgba(10,100,90,0.4)]
+               hover:shadow-[0_12px_40px_rgba(10,100,90,0.55)]
+               transition-all duration-300"
+      >
+        <span class="material-symbols-outlined text-sm">calendar_month</span>
+        Agendar sesión
+      </a>
+
+      <div class="flex items-center justify-center gap-6 mt-6">
+        <a href="#" class="text-[9px] uppercase tracking-widest text-text-muted hover:text-primary transition-colors">Instagram</a>
+        <span class="w-px h-3 bg-gray-200"></span>
+        <a href="#" class="text-[9px] uppercase tracking-widest text-text-muted hover:text-primary transition-colors">WhatsApp</a>
+        <span class="w-px h-3 bg-gray-200"></span>
+        <a href="#" class="text-[9px] uppercase tracking-widest text-text-muted hover:text-primary transition-colors">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function setupNav() {
+    const nav        = document.getElementById('main-nav')!;
+    const navInner   = nav.querySelector('.mx-auto') as HTMLElement;
+    const navBar     = nav.querySelector('[style*="height"]') as HTMLElement;
+    const navBorder  = document.getElementById('nav-border')!;
+    const toggle     = document.getElementById('menu-toggle')!;
+    const menu       = document.getElementById('mobile-menu')!;
+    const mobileBg   = document.getElementById('mobile-bg')!;
+    const mobileLinks = menu.querySelectorAll<HTMLElement>('.mobile-nav-link');
+    const mobileFooter = menu.querySelector<HTMLElement>('.mobile-nav-footer');
+    const bars       = toggle.querySelectorAll<HTMLElement>('.hamburger-bar');
+
+    let menuOpen = false;
+
+    // ── Scroll: encoger nav + cambiar a modo claro ──────────────────
+    const logoIcon   = nav.querySelector<HTMLElement>('.nav-logo-icon')!;
+    const logoName   = nav.querySelector<HTMLElement>('.nav-logo-name')!;
+    const logoSub    = nav.querySelector<HTMLElement>('.nav-logo-sub')!;
+    const desktopCta = nav.querySelector<HTMLElement>('.nav-cta')!;
+    const hamburgerBars = toggle.querySelectorAll<HTMLElement>('.hamburger-bar');
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 60;
+
+      navBar.style.height = scrolled ? '60px' : '80px';
+
+      if (scrolled) {
+        // Fondo oscuro glass — visible sobre cualquier sección
+        nav.style.cssText = `z-index: 100; background: rgba(10,18,18,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 2px 32px rgba(0,0,0,0.35);`;
+        navBorder.style.opacity = '0';
+
+        // Logo → blanco (igual que en hero, siempre visible)
+        logoIcon.style.cssText  = 'background:rgba(10,156,142,0.2); color:rgb(10,156,142);';
+        logoName.style.color    = 'white';
+        logoSub.style.color     = 'rgba(255,255,255,0.45)';
+
+        // Links → blanco suave
+        nav.querySelectorAll<HTMLElement>('.nav-link').forEach(l => {
+          l.style.color = 'rgba(255,255,255,0.65)';
+        });
+
+        // CTA → primary sólido
+        desktopCta.style.cssText = `
+          background: rgb(10,156,142);
+          color: white;
+          border-color: transparent;
+          box-shadow: 0 4px 20px rgba(10,156,142,0.4);
+        `;
+
+        // Hamburger barras → blancas
+        hamburgerBars.forEach(b => b.style.background = 'white');
+
+      } else {
+        // Transparente sobre hero oscuro
+        nav.style.cssText = 'z-index: 100;';
+        nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-[0_2px_24px_rgba(0,0,0,0.07)]');
+        navBorder.style.opacity = '0';
+
+        // Logo → blanco
+        logoIcon.style.cssText  = 'background:rgba(255,255,255,0.15); color:white;';
+        logoName.style.color    = 'white';
+        logoSub.style.color     = 'rgba(255,255,255,0.5)';
+
+        // Links → blanco
+        nav.querySelectorAll<HTMLElement>('.nav-link').forEach(l => {
+          l.style.color = 'rgba(255,255,255,0.7)';
+        });
+
+        // CTA → glass
+        desktopCta.style.cssText = `
+          background: rgba(255,255,255,0.15);
+          color: white;
+          border-color: rgba(255,255,255,0.25);
+          box-shadow: none;
+        `;
+
+        // Hamburger barras → blancas
+        hamburgerBars.forEach(b => b.style.background = 'white');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // estado inicial
+
+    // ── Hamburger: abrir / cerrar ────────────────────────────────────
+    const openMenu = () => {
+      menuOpen = true;
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
+      menu.classList.remove('pointer-events-none');
+      document.body.style.overflow = 'hidden';
+
+      // Fondo del overlay
+      mobileBg.style.opacity = '1';
+
+      // Logo → colores oscuros (visible sobre fondo blanco)
+      logoIcon.style.cssText  = 'background: rgba(10,156,142,0.12); color: rgb(10,156,142);';
+      logoName.style.color    = 'rgb(20,40,40)';
+      logoSub.style.color     = 'rgba(20,40,40,0.5)';
+
+      // Botón → fondo blanco, barras oscuras
+      toggle.style.background = 'white';
+      toggle.style.borderColor = 'rgba(0,0,0,0.08)';
+      toggle.style.boxShadow = '0 2px 12px rgba(0,0,0,0.1)';
+
+      // Barras → X  (animar desde estado base definido en inline style)
+      bars[0].style.transition = 'all 300ms ease';
+      bars[0].style.transform  = 'translateY(0) rotate(45deg)';
+      bars[0].style.background = 'rgb(20,40,40)';
+      bars[0].style.width      = '20px';
+
+      bars[1].style.transition = 'all 300ms ease';
+      bars[1].style.opacity    = '0';
+      bars[1].style.background = 'rgb(20,40,40)';
+
+      bars[2].style.transition = 'all 300ms ease';
+      bars[2].style.transform  = 'translateY(0) translateX(0) rotate(-45deg)';
+      bars[2].style.background = 'rgb(20,40,40)';
+      bars[2].style.width      = '20px';
+
+      // Links entran
+      mobileLinks.forEach((link, i) => {
+        link.style.transitionDelay = `${i * 60}ms`;
+        link.style.opacity  = '1';
+        link.style.transform = 'translateY(0)';
+      });
+      if (mobileFooter) {
+        mobileFooter.style.opacity  = '1';
+        mobileFooter.style.transform = 'translateY(0)';
+      }
+    };
+
+    const closeMenu = () => {
+      menuOpen = false;
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+
+      // Botón → restaurar glass
+      toggle.style.background  = 'rgba(255,255,255,0.15)';
+      toggle.style.borderColor = 'rgba(255,255,255,0.20)';
+      toggle.style.boxShadow   = 'none';
+
+      // Logo → restaurar según estado de scroll
+      const isScrolled = window.scrollY > 60;
+      logoIcon.style.cssText = isScrolled
+        ? 'background:rgba(10,156,142,0.2); color:rgb(10,156,142);'
+        : 'background:rgba(255,255,255,0.15); color:white;';
+      logoName.style.color = 'white';
+      logoSub.style.color  = isScrolled ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.5)';
+
+      // Barras → volver a hamburger INSTANTÁNEO (sin transición)
+      bars[0].style.transition = 'none';
+      bars[0].style.transform  = 'translateY(-6px) rotate(0deg)';
+      bars[0].style.background = 'white';
+      bars[0].style.width      = '20px';
+
+      bars[1].style.transition = 'none';
+      bars[1].style.opacity    = '1';
+      bars[1].style.background = 'white';
+
+      bars[2].style.transition = 'none';
+      bars[2].style.transform  = 'translateY(6px) translateX(4px) rotate(0deg)';
+      bars[2].style.background = 'white';
+      bars[2].style.width      = '12px';
+
+      // Restaurar transiciones para la próxima apertura
+      requestAnimationFrame(() => {
+        bars.forEach(b => b.style.transition = 'all 300ms ease');
+      });
+
+      // Links salen instantáneo
+      mobileLinks.forEach(link => {
+        link.style.transition = 'none';
+        link.style.opacity    = '0';
+        link.style.transform  = 'translateY(24px)';
+      });
+      if (mobileFooter) {
+        mobileFooter.style.transition = 'none';
+        mobileFooter.style.opacity    = '0';
+        mobileFooter.style.transform  = 'translateY(16px)';
+      }
+
+      // Fondo desaparece
+      mobileBg.style.opacity = '0';
+
+      setTimeout(() => {
+        menu.setAttribute('aria-hidden', 'true');
+        menu.classList.add('pointer-events-none');
+        mobileLinks.forEach((link, i) => {
+          link.style.transition = '';
+          link.style.transitionDelay = `${i * 60}ms`;
+        });
+        if (mobileFooter) mobileFooter.style.transition = '';
+      }, 400);
+    };
+
+    toggle.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
+
+    // Cerrar al hacer click en un link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOpen) closeMenu();
+    });
+
+  const navItems = [
+    { name: 'Talleres', href: '#talleres' },
+    { name: 'Sobre Mí', href: '#sobre-mi' },
+    { name: 'Testimonios', href: '#testimonios' },
+    { name: 'Contacto', href: '#contacto' },
+  ];
+
+    // Active link según scroll
+    const sections = navItems.map(item => document.querySelector(item.href)).filter(Boolean) as HTMLElement[];
+
+    const observerCb: IntersectionObserverCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          nav.querySelectorAll<HTMLAnchorElement>('.nav-link').forEach(link => {
+            const isActive = link.getAttribute('href') === id;
+            if (isActive) {
+              link.style.color = 'rgb(10,100,90)'; // primary siempre
+            } else if (window.scrollY <= 60) {
+              link.style.color = 'rgba(255,255,255,0.7)';
+            } else {
+              link.style.color = '';
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCb, { threshold: 0.5 });
+    sections.forEach(s => observer.observe(s));
+  }
+
+  document.addEventListener('astro:page-load', setupNav);
+  // Fallback para cuando no se usa View Transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNav);
+  } else {
+    setupNav();
+  }
+</script>

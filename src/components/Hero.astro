@@ -1,0 +1,188 @@
+---
+---
+
+<section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+
+  <!-- ── Imagen de fondo ── -->
+  <div class="absolute inset-0 w-full h-full hero-zoom">
+    <img
+      alt="Bienestar emocional"
+      class="w-full h-full object-cover"
+      src="/images/bg-hero.webp"
+      fetchpriority="high"
+    />
+    <!-- Capas de overlay -->
+    <div class="absolute inset-0 bg-background-dark/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-background-dark/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-background-dark/50 via-transparent to-transparent"></div>
+  </div>
+
+  <!-- ── Partículas / ruido de grano ── -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22/><feColorMatrix type=%22saturate%22 values=%220%22/></filter><rect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22/></svg>'); background-size: 200px;"></div>
+
+  <!-- ── Glows ambientales ── -->
+  <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[160px] pointer-events-none hero-glow-1"></div>
+  <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/8 rounded-full blur-[120px] pointer-events-none hero-glow-2"></div>
+
+  <!-- ── Líneas decorativas ── -->
+  <div class="absolute left-8 top-1/2 -translate-y-1/2 flex flex-col gap-2 opacity-20 hidden lg:flex">
+    <div class="w-px h-24 bg-gradient-to-b from-transparent to-primary mx-auto"></div>
+    <div class="w-1.5 h-1.5 rounded-full bg-primary mx-auto"></div>
+    <div class="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto"></div>
+  </div>
+  <div class="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-2 opacity-20 hidden lg:flex">
+    <div class="w-px h-24 bg-gradient-to-b from-transparent to-white mx-auto"></div>
+    <div class="w-1.5 h-1.5 rounded-full bg-white mx-auto"></div>
+    <div class="w-px h-24 bg-gradient-to-b from-white to-transparent mx-auto"></div>
+  </div>
+
+  <!-- ── Contenido ── -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+
+    <!-- Badge -->
+    <div class="hero-item hero-delay-0  items-center gap-2 rounded-full
+                bg-white/8 backdrop-blur-md
+                px-4 py-2
+                text-[9px] font-bold uppercase tracking-[0.2em] text-white/80
+                border border-white/12
+                mb-8 shadow-[0_4px_24px_rgba(0,0,0,0.2)]
+                hidden md:inline-flex">
+      <span class="flex size-4 items-center justify-center rounded-full bg-primary flex-shrink-0">
+        <span class="material-symbols-outlined text-white" style="font-size:11px">check</span>
+      </span>
+      <span class="hidden sm:inline">Espacio Seguro Certificado</span>
+      <span class="w-px h-3 bg-white/20"></span>
+      <span class="text-primary/80">Buenos Aires · Online</span>
+    </div>
+
+    <!-- Título -->
+    <h1 class="hero-item hero-delay-1 text-[2.6rem] leading-[1] sm:text-6xl md:text-7xl lg:text-[88px] font-light tracking-[-0.02em] text-white md:leading-[0.92] mb-6 md:mb-8">
+      El equilibrio que
+      <br />
+      <em class="font-serif not-italic text-transparent bg-clip-text"
+          style="background-image: linear-gradient(135deg, #fff 0%, var(--color-primary, #0a9c8e) 60%, #0ff8e0 100%);">
+        tu mente
+      </em>
+      <span class="font-light"> necesita.</span>
+    </h1>
+
+    <!-- Descripción -->
+    <p class="hero-item hero-delay-2 text-sm sm:text-base md:text-lg text-white/55 mb-10 md:mb-14 max-w-xl mx-auto font-light leading-relaxed px-2">
+      Daniela Montali te acompaña en un proceso de psicoterapia moderna para transformar el estrés en claridad y la ansiedad en propósito.
+    </p>
+
+    <!-- CTAs -->
+    <div class="hero-item hero-delay-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 md:mb-20 w-full px-4 sm:px-0">
+
+      <a
+        href="#talleres"
+        class="group relative inline-flex items-center justify-center gap-3 h-13 sm:h-14 px-8 sm:px-10 rounded-full w-full sm:w-auto
+               bg-primary text-white
+               font-bold text-[10px] uppercase tracking-widest
+               shadow-[0_8px_40px_rgba(10,156,142,0.45)]
+               hover:shadow-[0_12px_56px_rgba(10,156,142,0.65)]
+               hover:-translate-y-0.5 active:translate-y-0
+               transition-all duration-300"
+      >
+        <span>Explorar Talleres</span>
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform duration-300">
+          arrow_forward
+        </span>
+        <!-- Shimmer -->
+        <span class="absolute inset-0 rounded-full overflow-hidden">
+          <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700
+                       bg-gradient-to-r from-transparent via-white/15 to-transparent"></span>
+        </span>
+      </a>
+
+      <a
+        href="#sobre-mi"
+        class="group inline-flex items-center justify-center gap-3 h-13 sm:h-14 px-8 rounded-full w-full sm:w-auto
+               bg-white/6 backdrop-blur-md text-white/75 hover:text-white
+               font-bold text-[10px] uppercase tracking-widest
+               border border-white/10 hover:border-white/25
+               hover:-translate-y-0.5 active:translate-y-0
+               transition-all duration-300"
+      >
+        <span>Conocer más</span>
+        <span class="material-symbols-outlined text-sm opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+          person
+        </span>
+      </a>
+
+    </div>
+
+    <!-- Stats row -->
+    <div class="hero-item hero-delay-4 w-full sm:w-auto flex justify-center overflow-hidden rounded-2xl border border-white/8 backdrop-blur-md bg-white/4">
+      {[
+        { value: '+120', label: 'Pacientes' },
+        { value: '8 años', label: 'Experiencia' },
+        { value: '98%', label: 'Satisfacción' },
+      ].map((stat, i) => (
+        <div class={`flex flex-col items-center flex-1 sm:flex-none px-5 sm:px-10 py-4 sm:py-5 ${i < 2 ? 'border-r border-white/8' : ''}`}>
+          <span class="text-xl sm:text-2xl font-light text-white tracking-tight">{stat.value}</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/40 font-semibold mt-1 text-center">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+  <!-- ── Scroll indicator ── -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hero-item hero-delay-4">
+    <span class="text-[8px] uppercase tracking-[0.3em] text-white/30 font-bold">Scroll</span>
+    <div class="w-px h-10 bg-gradient-to-b from-white/20 to-transparent relative overflow-hidden">
+      <div class="absolute top-0 w-full h-4 bg-primary/80 rounded-full scroll-line"></div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Zoom imagen */
+  @keyframes hero-zoom {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1); }
+  }
+  .hero-zoom {
+    animation: hero-zoom 12s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Glows flotantes */
+  @keyframes glow-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(40px, -30px) scale(1.05); }
+  }
+  @keyframes glow-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(-30px, 20px) scale(1.08); }
+  }
+  .hero-glow-1 { animation: glow-float-1 14s ease-in-out infinite; }
+  .hero-glow-2 { animation: glow-float-2 18s ease-in-out infinite; }
+
+  /* Entrada de elementos hero */
+  .hero-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes hero-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-delay-0 { animation-delay: 0.2s; }
+  .hero-delay-1 { animation-delay: 0.45s; }
+  .hero-delay-2 { animation-delay: 0.65s; }
+  .hero-delay-3 { animation-delay: 0.85s; }
+  .hero-delay-4 { animation-delay: 1.1s; }
+
+  /* Scroll line */
+  @keyframes scroll-drop {
+    0%   { top: -100%; opacity: 1; }
+    80%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  .scroll-line {
+    animation: scroll-drop 2s ease-in-out infinite;
+    animation-delay: 1.8s;
+  }
+</style>
