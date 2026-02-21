@@ -9,7 +9,7 @@ const workshops = [
     type: 'Presencial & Virtual',
     spots: '12 plazas disponibles',
     level: 'Todos los niveles',
-    instructor: 'Dra. Valentina Ríos',
+    instructor: 'Daniela Montali',
     full: `Este taller intensivo de 3 horas está diseñado para personas que experimentan ansiedad crónica, estrés laboral o dificultad para desconectarse. A través de un enfoque basado en la Terapia Cognitivo-Conductual (TCC) y técnicas de regulación del sistema nervioso autónomo, aprenderás a identificar los desencadenantes de tu ansiedad y a interrumpir el ciclo de pensamiento catastrófico antes de que escale.`,
     program: [
       { time: '14:00', label: 'Bienvenida y evaluación inicial de niveles de estrés' },
@@ -25,18 +25,22 @@ const workshops = [
       'Consulta grupal de seguimiento a las 2 semanas',
     ],
     tags: ['TCC', 'Regulación emocional', 'Neurociencia aplicada'],
+    refs: [
+      { label: 'APA — Trastornos de ansiedad', url: 'https://www.apa.org/topics/anxiety' },
+      { label: 'Hofmann et al. (2012) — Eficacia de la TCC', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3584580/' },
+    ],
   },
   {
     date: '22 Abr',
     time: '10:00 - 13:00',
     title: 'El Arte de la Autocompasión',
-    desc: 'Aprende a romper el ciclo del diálogo interno negativo y construye una relación sana contigo.',
+    desc: 'Aprendé a romper el ciclo del diálogo interno negativo y construí una relación sana con vos mismo/a.',
     price: '$80',
     type: 'Virtual',
     spots: '20 plazas disponibles',
     level: 'Principiantes y nivel medio',
-    instructor: 'Lic. Camila Herrera',
-    full: `Basado en el protocolo MSC (Mindful Self-Compassion) de Kristin Neff y Christopher Germer, este taller explora cómo el autocriticismo excesivo activa los mismos circuitos cerebrales que el acoso social. Aprenderás a reconocer el sufrimiento propio sin amplificarlo, a tratarte con la misma amabilidad que ofrecerías a alguien que quieres, y a construir una base emocional más estable y resiliente frente a los errores y fracasos.`,
+    instructor: 'Daniela Montali',
+    full: `Basado en el protocolo MSC (Mindful Self-Compassion) de Kristin Neff y Christopher Germer, este taller explora cómo el autocriticismo excesivo activa los mismos circuitos cerebrales que el acoso social. Aprenderás a reconocer el sufrimiento propio sin amplificarlo, a tratarte con la misma amabilidad que ofrecerías a alguien que querés, y a construir una base emocional más estable y resiliente frente a los errores y fracasos.`,
     program: [
       { time: '10:00', label: 'Introducción: ¿Qué es la autocompasión y qué NO es?' },
       { time: '10:40', label: 'Ejercicio: El crítico interior — cartografiar su voz' },
@@ -51,17 +55,21 @@ const workshops = [
       'Hoja de práctica diaria de 7 días',
     ],
     tags: ['Autocompasión', 'Mindfulness', 'Psicología positiva'],
+    refs: [
+      { label: 'Neff & Germer — The Mindful Self-Compassion Workbook', url: 'https://self-compassion.org/the-research/' },
+      { label: 'Zessin et al. (2015) — Autocompasión y bienestar', url: 'https://pubmed.ncbi.nlm.nih.gov/25778996/' },
+    ],
   },
   {
     date: '6 May',
     time: '18:00 - 21:00',
     title: 'Vínculos Conscientes',
-    desc: 'Transforma tus patrones relacionales desde el apego y la comunicación no violenta.',
+    desc: 'Transformá tus patrones relacionales desde el apego y la comunicación no violenta.',
     price: '$110',
     type: 'Presencial',
     spots: '10 plazas disponibles',
     level: 'Nivel medio y avanzado',
-    instructor: 'Dra. Valentina Ríos',
+    instructor: 'Daniela Montali',
     full: `Nuestros patrones de relación se forman en la infancia y se repiten de manera inconsciente en cada vínculo adulto: pareja, familia, amistad, trabajo. Este taller combina la Teoría del Apego de Bowlby con herramientas de Comunicación No Violenta (CNV) para ayudarte a identificar tu estilo de apego dominante, comprender cómo ese patrón genera conflictos recurrentes, y desarrollar estrategias concretas para relacionarte desde un lugar más seguro y auténtico.`,
     program: [
       { time: '18:00', label: 'Test de estilos de apego y reflexión guiada' },
@@ -77,32 +85,43 @@ const workshops = [
       'Acceso al canal privado de la comunidad',
     ],
     tags: ['Teoría del apego', 'CNV', 'Relaciones sanas'],
+    refs: [
+      { label: 'Bowlby (1988) — A Secure Base', url: 'https://www.taylorfrancis.com/books/mono/10.4324/9780203440841/secure-base-john-bowlby' },
+      { label: 'Rosenberg — Comunicación No Violenta (CNV)', url: 'https://www.cnvc.org/learn-nvc/what-is-nvc' },
+    ],
   },
   {
-    date: '20 May',
-    time: '09:00 - 12:00',
-    title: 'Sueño, Descanso y Mente Tranquila',
-    desc: 'Un enfoque científico para recuperar la calidad del sueño y restaurar tu energía vital.',
-    price: '$85',
-    type: 'Virtual',
-    spots: '25 plazas disponibles',
-    level: 'Todos los niveles',
-    instructor: 'Lic. Camila Herrera',
-    full: `El insomnio y el sueño no reparador afectan al 30% de los adultos y son uno de los principales amplificadores de ansiedad, irritabilidad y deterioro cognitivo. Este taller aplica el protocolo de Terapia Cognitivo-Conductual para el Insomnio (TCC-I), considerado el tratamiento de primera línea por encima de la medicación según la Academia Americana de Medicina del Sueño. Aprenderás la higiene del sueño basada en evidencia, técnicas de desactivación mental nocturna y cómo reprogramar la relación entre tu mente y la cama.`,
+    date: '10 Jun',
+    time: '10:00 - 13:00',
+    title: 'AUTOADOLE',
+    desc: 'Taller de autoconocimiento y regulación emocional especialmente diseñado para adolescentes.',
+    price: '$70',
+    type: 'Presencial',
+    spots: '15 plazas disponibles',
+    level: 'Adolescentes (13–17 años)',
+    instructor: 'Daniela Montali',
+    url: 'https://eltribunodejujuy.com/informacion-general/2025-8-25-0-0-0-taller-para-adolescentes',
+    urlLabel: 'Taller para adolescentes',
+    full: `AUTOADOLE es un espacio seguro y dinámico creado específicamente para adolescentes de 13 a 17 años. A través de actividades vivenciales, juegos de rol, dinámicas grupales y herramientas adaptadas a su etapa de desarrollo, los y las participantes aprenderán a reconocer y nombrar sus emociones, a gestionar la presión social, el miedo al juicio y la autocrítica, y a construir una identidad más sólida y compasiva. El taller integra principios de la psicología del desarrollo, la neurociencia adolescente y la Terapia de Aceptación y Compromiso (ACT) en un formato accesible y cercano.`,
     program: [
-      { time: '09:00', label: 'Evaluación: diario del sueño y arquitectura del ciclo' },
-      { time: '09:45', label: 'Neurofisiología del sueño: qué pasa mientras dormimos' },
-      { time: '10:30', label: 'TCC-I: restricción de sueño y control de estímulos' },
-      { time: '11:15', label: 'Rutina nocturna: técnicas de desactivación mental y corporal' },
-      { time: '11:45', label: 'Plan personalizado y recursos de seguimiento' },
+      { time: '10:00', label: 'Bienvenida y dinámica de presentación: "Quién soy hoy"' },
+      { time: '10:30', label: 'Mapa emocional: identificar y nombrar lo que sentimos' },
+      { time: '11:15', label: 'La presión social y el miedo al juicio — ejercicio grupal' },
+      { time: '12:00', label: 'Herramientas ACT: valores personales y acción comprometida' },
+      { time: '12:30', label: 'Cierre: carta a mi yo del futuro y compromisos de autocuidado' },
     ],
     includes: [
-      'Plantilla de diario del sueño (4 semanas)',
-      'Protocolo TCC-I resumido en PDF',
-      'Audio de body scan nocturno guiado',
-      'Check-in grupal online a las 3 semanas',
+      'Cuaderno de trabajo AUTOADOLE (impreso)',
+      'Tarjetas de regulación emocional para llevar',
+      'Acceso al grupo de seguimiento para participantes',
+      'Guía para familias: cómo acompañar el proceso',
     ],
-    tags: ['TCC-I', 'Neurociencia del sueño', 'Bienestar integral'],
+    tags: ['Adolescentes', 'ACT', 'Autoconocimiento', 'Regulación emocional'],
+    refs: [
+      { label: 'OPS — Salud mental de adolescentes', url: 'https://www.paho.org/es/temas/salud-mental-adolescentes' },
+      { label: 'Hayes et al. — ACT: Terapia de Aceptación y Compromiso', url: 'https://contextualscience.org/act' },
+      { label: 'UNICEF — Bienestar emocional en la adolescencia', url: 'https://www.unicef.org/es/salud-mental' },
+    ],
   },
 ];
 ---
@@ -131,9 +150,8 @@ const workshops = [
         >
 
           <!-- HEADER — siempre visible, click para expandir -->
-          <div 
-            class="workshop-header group flex flex-col lg:flex-row cursor-pointer select-none"
-          >
+          <div class="workshop-header group flex flex-col lg:flex-row cursor-pointer select-none">
+
             <!-- Fecha -->
             <div class="lg:w-1/4 bg-accent-sage/30 flex flex-col items-center justify-center p-8 text-center
                         transition-colors duration-500 workshop-date-block">
@@ -142,9 +160,9 @@ const workshops = [
             </div>
 
             <!-- Info principal -->
-            <div class="flex-1 p-10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex-1 p-8 lg:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 lg:gap-8">
               <div class="space-y-3">
-                <div class="flex flex-wrap gap-4 text-[10px] font-bold uppercase tracking-widest text-primary">
+                <div class="flex flex-wrap gap-3 lg:gap-4 text-[10px] font-bold uppercase tracking-widest text-primary">
                   <span class="flex items-center gap-1">
                     <span class="material-symbols-outlined text-sm">schedule</span> {w.time || 'TBA'}
                   </span>
@@ -155,8 +173,26 @@ const workshops = [
                     <span class="material-symbols-outlined text-sm">person</span> {w.instructor}
                   </span>
                 </div>
-                <h3 class="text-2xl font-bold text-text-main">{w.title}</h3>
-                <p class="text-text-muted font-light max-w-xl">{w.desc}</p>
+
+                <div class="flex items-center gap-3 flex-wrap">
+                  <h3 class="text-xl lg:text-2xl font-bold text-text-main">{w.title}</h3>
+                  {w.url && (
+                    <a
+                      href={w.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onclick="event.stopPropagation()"
+                      class="inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-wider
+                             text-primary bg-primary/8 border border-primary/20 px-3 py-1.5 rounded-full
+                             hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+                    >
+                      <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                      {w.urlLabel || 'Ver más'}
+                    </a>
+                  )}
+                </div>
+
+                <p class="text-text-muted font-light max-w-xl text-sm lg:text-base">{w.desc}</p>
 
                 <!-- Tags -->
                 <div class="flex flex-wrap gap-2 pt-1">
@@ -168,16 +204,15 @@ const workshops = [
                 </div>
               </div>
 
-              <div class="flex flex-col items-center gap-4 flex-shrink-0">
+              <div class="flex flex-row md:flex-col items-center gap-4 flex-shrink-0 w-full md:w-auto">
                 <span class="text-2xl font-light text-text-main">{w.price}</span>
                 <button 
-                  class="workshop-reserve bg-text-main text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-all"
+                  class="workshop-reserve bg-text-main text-white px-6 lg:px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-all flex-1 md:flex-none text-center"
                   onclick="event.stopPropagation()"
                 >
                   Reservar Plaza
                 </button>
-                <!-- Toggle indicator -->
-                <span class="workshop-toggle flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-primary/60 transition-all duration-300">
+                <span class="workshop-toggle hidden md:flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-primary/60 transition-all duration-300">
                   <span class="material-symbols-outlined text-base workshop-toggle-icon transition-transform duration-300">expand_more</span>
                   Ver detalles
                 </span>
@@ -185,13 +220,13 @@ const workshops = [
             </div>
           </div>
 
-          <!-- EXPANDED CONTENT — oculto por defecto -->
+          <!-- EXPANDED CONTENT -->
           <div class="workshop-expanded" style="display:none; opacity:0;">
-            <div class="border-t border-gray-100 mx-8 mb-0"></div>
+            <div class="border-t border-gray-100 mx-6 lg:mx-8 mb-0"></div>
             <div class="grid md:grid-cols-2 gap-0">
 
-              <!-- Columna izquierda: descripción + programa -->
-              <div class="p-10 border-r border-gray-100/80 space-y-8">
+              <!-- Columna izquierda: descripción + programa + referencias -->
+              <div class="p-8 lg:p-10 border-b md:border-b-0 md:border-r border-gray-100/80 space-y-8">
 
                 <div>
                   <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Sobre el taller</h4>
@@ -201,7 +236,7 @@ const workshops = [
                 <div>
                   <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Programa</h4>
                   <ul class="space-y-3">
-                    {w.program.map((p, pi) => (
+                    {w.program.map((p) => (
                       <li class="flex items-start gap-4">
                         <span class="text-[11px] font-bold text-primary bg-primary/8 px-2 py-1 rounded-lg flex-shrink-0 mt-0.5 font-mono">
                           {p.time}
@@ -212,10 +247,36 @@ const workshops = [
                   </ul>
                 </div>
 
+                <!-- Referencias -->
+                {w.refs && w.refs.length > 0 && (
+                  <div>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4 flex items-center gap-2">
+                      <span class="material-symbols-outlined text-sm">library_books</span>
+                      Referencias y fuentes
+                    </h4>
+                    <ul class="space-y-2">
+                      {w.refs.map(ref => (
+                        <li>
+                          <a
+                            href={ref.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onclick="event.stopPropagation()"
+                            class="group/ref flex items-start gap-2.5 text-xs text-text-muted font-light hover:text-primary transition-colors duration-300"
+                          >
+                            <span class="material-symbols-outlined text-primary/40 group-hover/ref:text-primary text-sm flex-shrink-0 mt-0.5 transition-colors duration-300">open_in_new</span>
+                            <span class="underline underline-offset-2 decoration-primary/20 group-hover/ref:decoration-primary transition-all duration-300">{ref.label}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
               </div>
 
               <!-- Columna derecha: incluye + info práctica -->
-              <div class="p-10 space-y-8">
+              <div class="p-8 lg:p-10 space-y-8">
 
                 <div>
                   <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Qué incluye</h4>
@@ -248,6 +309,19 @@ const workshops = [
                   </div>
                 </div>
 
+                {w.url && (
+                  <a
+                    href={w.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="event.stopPropagation()"
+                    class="w-full flex items-center justify-center gap-2 border border-primary text-primary py-3.5 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    {w.urlLabel || 'Ver más información'}
+                  </a>
+                )}
+
                 <button 
                   class="w-full bg-primary text-white py-4 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 transition-all"
                   onclick="event.stopPropagation()"
@@ -267,34 +341,34 @@ const workshops = [
 
 <script>
   document.querySelectorAll<HTMLElement>('.workshop-card').forEach(card => {
-    const header   = card.querySelector<HTMLElement>('.workshop-header')!;
-    const expanded = card.querySelector<HTMLElement>('.workshop-expanded')!;
-    const toggleIcon = card.querySelector<HTMLElement>('.workshop-toggle-icon')!;
-    const toggleLabel = card.querySelector<HTMLElement>('.workshop-toggle')!;
-    const dateBlock = card.querySelector<HTMLElement>('.workshop-date-block')!;
-    const dateText  = card.querySelector<HTMLElement>('.workshop-date-text')!;
-    const spotsText = card.querySelector<HTMLElement>('.workshop-spots-text')!;
+    const header     = card.querySelector<HTMLElement>('.workshop-header')!;
+    const expanded   = card.querySelector<HTMLElement>('.workshop-expanded')!;
+    const toggleIcon = card.querySelector<HTMLElement>('.workshop-toggle-icon');
+    const toggleLabel = card.querySelector<HTMLElement>('.workshop-toggle');
+    const dateBlock  = card.querySelector<HTMLElement>('.workshop-date-block')!;
+    const dateText   = card.querySelector<HTMLElement>('.workshop-date-text')!;
+    const spotsText  = card.querySelector<HTMLElement>('.workshop-spots-text')!;
 
     header.addEventListener('click', () => {
       const isOpen = card.dataset.open === 'true';
 
       if (isOpen) {
-        // — COLAPSAR: instantáneo —
+        // COLAPSAR: instantáneo
         expanded.style.transition = 'none';
         expanded.style.opacity    = '0';
         expanded.style.display    = 'none';
-        card.dataset.open = 'false';
-        card.style.boxShadow = '';
+        card.dataset.open         = 'false';
+        card.style.boxShadow      = '';
 
-        toggleIcon.style.transform = '';
-        toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base workshop-toggle-icon" style="display:inline-block">expand_more</span> Ver detalles';
+        if (toggleIcon) toggleIcon.style.transform = '';
+        if (toggleLabel) toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base workshop-toggle-icon" style="display:inline-block">expand_more</span> Ver detalles';
 
         dateBlock.style.background = '';
-        dateText.style.color = '';
-        spotsText.style.color = '';
+        dateText.style.color       = '';
+        spotsText.style.color      = '';
 
       } else {
-        // — EXPANDIR: con animación suave —
+        // EXPANDIR: animación suave
         expanded.style.display    = 'block';
         expanded.style.transition = 'none';
         expanded.style.opacity    = '0';
@@ -306,17 +380,16 @@ const workshops = [
           expanded.style.transform  = 'translateY(0)';
         }));
 
-        card.dataset.open = 'true';
+        card.dataset.open    = 'true';
         card.style.boxShadow = '0 20px 60px rgba(7,28,31,0.12)';
 
-        toggleIcon.style.transform = 'rotate(180deg)';
-        toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base" style="display:inline-block;transform:rotate(180deg)">expand_more</span> Cerrar';
+        if (toggleIcon) toggleIcon.style.transform = 'rotate(180deg)';
+        if (toggleLabel) toggleLabel.innerHTML = '<span class="material-symbols-outlined text-base" style="display:inline-block;transform:rotate(180deg)">expand_more</span> Cerrar';
 
         dateBlock.style.background = 'var(--color-primary, #0a6460)';
         dateText.style.color       = 'white';
         spotsText.style.color      = 'rgba(255,255,255,0.75)';
 
-        // Scroll suave para ver el contenido
         setTimeout(() => {
           card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
